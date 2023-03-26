@@ -1,0 +1,17 @@
+{
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
+  },
+  "name": "vidify",
+  "version": "1.0.0",
+  "main": "tailwind.config.js",
+  
+  "scripts": {
+    "build": "tailwindcss -i ./style/input.css -o ./style/main.css",
+    "watch": "tailwindcss -i ./style/input.css -o ./style/main.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
