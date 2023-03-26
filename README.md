@@ -36,6 +36,3 @@ This app was built using the following technologies:
 
 Please note that this is the most basic version of the app and is intended as a fun project. It may not be suitable for all use cases, and we make no guarantees about its functionality or security.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE.md](LICENSE.md) file for details.
