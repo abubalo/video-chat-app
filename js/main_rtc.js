@@ -1,12 +1,12 @@
-const APP_ID = "24b8b0ef1f894877a1d4a7338723fc62"
+const APP_ID = "24b8b0ef1f894877a1d4a7338723fc62";
 
-let uid = sessionStorage.getItem('uid')
-if(!uid){
-    uid = Math.floor(Math.random() * 10_00_000);
-    sessionStorage.setItem('uid', uid)
+let uid = sessionStorage.getItem("uid");
+if (!uid) {
+  uid = Math.floor(Math.random() * 10_00_000);
+  sessionStorage.setItem("uid", uid);
 }
 
-let token = null; 
+let token = null;
 let client;
 
 let queryString = window.location.search;
@@ -18,35 +18,56 @@ if (!roomId) {
 }
 
 let localTracks = [];
-let romoteUsers = {}
+let remoteUsers = {};
 
-// const servers = () => {
-//   iceSever: [
-//     {
-//       urls: ["stun:stun1.l.google.com:19302", "stun:stun2.l.google.com:19302"],
-//     },
-//   ];
-// };
+const joinRoomInit = async () => {
+  client = AgoraRTC.createClient({ mode: "rtc", codec: "vp8" });
+  await client.join(APP_ID, roomId, token, uid);
 
+  await client.on("user-published", handleUserPublish);
+  await client.on("user-left", handleUserLeft);
+  joinStream();
+};
 
-const joinRoomInnit = async ()=>{
-    client = AgoraRTC.createClient({mode: 'rtc', codec: 'vp8'})
-    await client.join(APP_ID, roomId, token, uid)
+const joinStream = async () => {
+  localTracks = await AgoraRTC.createMicrophoneAndCameraTracks();
 
-    joinStream();
+  const streamPlayer = `
+        <div data-player="stream-player" class="overflow-hidden" id="user-${uid}"  ></div>
+    `;
+  document
+    .getElementById("participants")
+    .insertAdjacentHTML("beforeend", streamPlayer);
+
+  localTracks[1].play(`user-${uid}`);
+  await client.publish([localTracks[0], localTracks[1]]);
+};
+
+async function handleUserPublish(user, mediaType) {
+  remoteUsers[user.uid] = user;
+
+  await client.subscribe(user, mediaType);
+
+  let streamPlayer = document.getElementById(`user-${user.uid}`);
+  if (streamPlayer === null) {
+    streamPlayer = `
+              <div data-player="stream-player" class="overflow-hidden" id="user-${user.uid}"  ></div>
+          `;
+    document
+      .getElementById(`participants`)
+      .insertAdjacentHTML("beforeend", streamPlayer);
+  }
+
+  if (mediaType === "video") {
+    user.videoTrack.play(`user-${user.uid}`);
+  }
+  if (mediaType === "audio") {
+    user.addTrack.play();
+  }
 }
 
-const joinStream = async ()=>{
-    localTracks = await AgoraRTC.createMicrophoneAndCameraTracks()
-
-    const player = `
-        <div id="user-container" class="w-full h-30v bg-blue-500" >
-            <div class="w-full absolute h-full" id="user-${uid}"></div>
-        </div>
-    `
-    document.getElementById('participant').insertAdjacentHTML('beforeend', player)
-    // document.getElementById('participants').innerHTML = player
-
-    localTracks[1].play(`user-${uid}`).play()
+async function handleUserLeft(user) {
+  delete remoteUsers[user.uid];
+  document.getElementById(`user-${user.uid}`).remove();
 }
-joinRoomInnit();
+joinRoomInit();

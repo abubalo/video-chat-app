@@ -1,0 +1,21 @@
+[data-player="stream-player" ]{
+    /* aspect-ratio: 1/1; */
+    width: 100%;
+    object-fit: cover;
+    height: 20vh;
+    max-height: auto; 
+    background: red;
+}
+
+/* [data-player="stream-player" ] > video {
+    border-raduis: 50px;
+    display: none
+} */
+
+
+#main--speaker > video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
