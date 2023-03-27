@@ -5,10 +5,12 @@
   "name": "vidify",
   "version": "1.0.0",
   "main": "tailwind.config.js",
-  
+  "directories": {
+    "public": "public"
+  },
   "scripts": {
-    "build": "tailwindcss -i ./style/input.css -o ./style/main.css",
-    "watch": "tailwindcss -i ./style/input.css -o ./style/main.css --watch"
+    "build": "tailwindcss -i ./style/input.css -o ./public/main.css",
+    "watch": "tailwindcss -i ./style/input.css -o ./public/main.css --watch"
   },
   "keywords": [],
   "author": "",
