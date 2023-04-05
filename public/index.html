@@ -13,10 +13,10 @@
 </head>
 
 <body>
-    <main class='container flex  max-w-full text-white bg-slate-900 h-100v'>
+    <main class='container flex max-w-full text-white bg-slate-900 h-100v'>
         <!-- main content -->
         <div class="container flex flex-col items-center md:mx-6 md:flex-col md:flex-2 md:h-full">
-            <header class="flex w-full justify-between gap-6 py-2">
+            <header class="flex justify-between w-full gap-6 py-2">
                 <div class="topic">
                     <span class="">End-to-end Data Science</span>
                     <span class="text-sm">Q&A session</span>
@@ -31,16 +31,16 @@
             <!-- screens -->
             <section  class="container flex flex-col  mx-auto h-full rounded-lg overflow-hidden md:flex-2 md:w-full [90%]">
                 <!-- large screen view -->
-                <div id="streams_container" class="container flex h-full w-full">
+                <div id="streams_container" class="container flex w-full h-full">
                     <!-- main speaker -->
-                    <div id="main--speaker" class="bg-slate-200 md:h-full h-full w-5/6 ">
-                        <!-- <video class="w-full h-full object-cover" src="https://www.shutterstock.com/shutterstock/videos/1069356016/preview/stock-footage-head-shot-portrait-young-redhead-woman-talk-to-webcam-participate-in-videoconference-negotiate-to.webm" autoplay></video> -->
+                    <div id="main--speaker" class="w-5/6 h-full bg-slate-200 md:h-full ">
+                        <!-- <video class="object-cover w-full h-full" src="https://www.shutterstock.com/shutterstock/videos/1069356016/preview/stock-footage-head-shot-portrait-young-redhead-woman-talk-to-webcam-participate-in-videoconference-negotiate-to.webm" autoplay></video> -->
                     </div>
                     <!-- participant -->
-                    <div id="participants" class="w-1/6 flex flex-wrap md:h-full md:overflow-auto bg-slate-600 p-6">
+                    <div id="participants" class="flex flex-col items-center w-1/6 gap-5 m-6 border-[5px] border-red-500 iflex-wrap md:h-full md:overflow-auto bg-slate-600">
 
-                        <!-- <div class="w-6 h-6 aspect-square overflow-hidden"  id="user-1">
-                            <video class="w-6 h-6 aspect-square object-scale-down rounded-sm" src="https://www.shutterstock.com/shutterstock/videos/1069356016/preview/stock-footage-head-shot-portrait-young-redhead-woman-talk-to-webcam-participate-in-videoconference-negotiate-to.webm" autoplay></video>
+                        <!-- <div class="w-6 h-6 overflow-hidden aspect-square"  id="user-1">
+                            <video class="object-scale-down w-6 h-6 rounded-sm aspect-square" src="https://www.shutterstock.com/shutterstock/videos/1069356016/preview/stock-footage-head-shot-portrait-young-redhead-woman-talk-to-webcam-participate-in-videoconference-negotiate-to.webm" autoplay></video>
                         </div> -->
                         
                         
@@ -56,7 +56,7 @@
                 </div> -->
             </section>          
             <!-- controls -->
-            <div class="container flex justify-center items-center w-full gap-2 py-2">
+            <div class="container flex items-center justify-center w-full gap-2 py-2">
                 <span id="mic" class="flex justify-center items-center w-[2rem] h-[2rem] bg-lightWhite rounded-full cursor-pointer"><img src="/assets/microphone.svg" alt=""></span>
                 <span id="camera" class="flex justify-center items-center w-[2rem] h-[2rem] bg-lightWhite rounded-full cursor-pointer"><img src="/assets/camera.svg" alt=""></span>
                 <span id="screen" class="flex justify-center items-center w-[2rem] h-[2rem] bg-lightWhite rounded-full cursor-pointer"><img src="/assets/screen.svg" alt=""></span>
@@ -71,13 +71,13 @@
             </div>
         </div>
         <!-- side panel -->
-        <div class="hidden container md:flex flex-col md:flex-1 md:w-full bg-white h-100v">
+        <div class="container flex-col hidden bg-white md:flex md:flex-1 md:w-full h-100v">
             <!-- options -->
-            <div class="flex p-5 border-b-2 gap-2 border-gray-200">
+            <div class="flex gap-2 p-5 border-b-2 border-gray-200">
                 <!-- chat button-->
-                <div id="chatroom-btn" data-id="1" class="w-full rounded-md p-2 text-slate-500 text-center cursor-pointer hover:bg-gray-300 transition ease-in duration-300" >chat <span class="bg-slate-400 px-1 text-slate-700 rounded-sm">1</span></div>
+                <div id="chatroom-btn" data-id="1" class="w-full p-2 text-center transition duration-300 ease-in rounded-md cursor-pointer text-slate-500 hover:bg-gray-300" >chat <span class="px-1 rounded-sm bg-slate-400 text-slate-700">1</span></div>
                 <!-- participant button-->
-                <div id="pati-room_btn" data-id="2" class="w-full bg-gray-200 rounded-md p-2 text-slate-500 text-center cursor-pointer hover:bg-gray-300 transition ease-in duration-300">participants <span class="bg-slate-300 px-1 text-black rounded-sm">13</span></div>
+                <div id="pati-room_btn" data-id="2" class="w-full p-2 text-center transition duration-300 ease-in bg-gray-200 rounded-md cursor-pointer text-slate-500 hover:bg-gray-300">participants <span class="px-1 text-black rounded-sm bg-slate-300">13</span></div>
             </div>
             <!-- option views -->
             <div class="flex w-full h-100v">
@@ -85,13 +85,13 @@
                 <!-- participants panel-->
                 <div id="parti-panel" class="hidden w-full">
                     <!-- search bar -->
-                    <div class="flex justify-between items-center w-perc mt-2 mx-auto p-1 bg-slate-50 border border-slate-200 rounded-md">
-                        <span class="material-symbols-outlined text-slate-400 mr-1">search</span>
-                        <input class=" w-full bg-transparent text-black outline-none" type="text" name="search" id="search" placeholder="search for participant">
+                    <div class="flex items-center justify-between p-1 mx-auto mt-2 border rounded-md w-perc bg-slate-50 border-slate-200">
+                        <span class="mr-1 material-symbols-outlined text-slate-400">search</span>
+                        <input class="w-full text-black bg-transparent outline-none " type="text" name="search" id="search" placeholder="search for participant">
                     </div>
                     <!-- participants list-->
                     <!-- user 1 -->
-                    <div id="participant" class="flex justify-between flex-1 gap-1 font-semibold text-black items-center w-perc mt-5 mx-auto p-2 rounded-full cursor-default hover:bg-slate-100 transition ease-in duration-300">
+                    <div id="participant" class="box-border flex items-center justify-between flex-1 gap-1 p-2 mx-auto mt-5 font-semibold text-black transition duration-300 ease-in rounded-full cursor-default w-perc hover:bg-slate-100">
                         <div class="flex gap-2">
                             <span class="w-[2rem] h-[2rem] overflow-hidden bg-blue-800 rounded-full"><img class="" src="https://assets.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ydHJhaXR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt=""></span>
                             <span class="select-none">Emma Williams (you) <i class="font-medium">host</i></span>
@@ -118,27 +118,27 @@
                 <!-- chat panel -->
                 <div id="chat-panel" class="flex flex-col justify-between w-full h-full">
                     <div class="flex flex-col">
-                        <div class="flex flex-col justify-start ml-1 mt-2">
-                            <span class="w-max bg-blue-500 p-2 rounded-sm">Hi there</span>
-                            <small id="name" class="text-slate-500 font-medium">Anita</small>
+                        <div class="flex flex-col justify-start mt-2 ml-1">
+                            <span class="p-2 bg-blue-500 rounded-sm w-max">Hi there</span>
+                            <small id="name" class="font-medium text-slate-500">Anita</small>
                         </div>
-                        <div class="w-4/5 flex justify-end mt-2 mr-1">
+                        <div class="flex justify-end w-4/5 mt-2 mr-1">
                             <div class="flex flex-col">
                                 <span class="w-[50px]">
                                     <img src="/assets/logo.png" alt="">
                                 </span>
-                                <span class="bg-purple-600  text-white p-2 rounded-sm ">hello</span>
-                                <small id="name" class="text-slate-500 font-medium">John Adam</small>
+                                <span class="p-2 text-white bg-purple-600 rounded-sm ">hello</span>
+                                <small id="name" class="font-medium text-slate-500">John Adam</small>
                             </div>
                         </div>
                         <div class="w-[80%] flex flex-col justify-start ml-1 mt-2">
-                            <span class=" bg-blue-500 p-2 rounded-sm">How is it going? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur omnis autem nemo cum magnam officia laboriosam quo quibusdam expedita?</span>
-                            <small id="name" class="text-slate-500 font-medium">Debayo</small>
+                            <span class="p-2 bg-blue-500 rounded-sm ">How is it going? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur omnis autem nemo cum magnam officia laboriosam quo quibusdam expedita?</span>
+                            <small id="name" class="font-medium text-slate-500">Debayo</small>
                         </div>
                     </div>
                     <div class="flex bg-red-600">
-                        <input type="text" name="" id="" placeholder="type message" class="bg-slate-300 w-full text-slate-700 outline-none p-2">
-                        <span class="bg-slate-700 text-white p-2 cursor-pointer hover:bg-slate-800  duration-300 ease-in-out" id="send">send</span>
+                        <input type="text" name="" id="" placeholder="type message" class="w-full p-2 outline-none bg-slate-300 text-slate-700">
+                        <span class="p-2 text-white duration-300 ease-in-out cursor-pointer bg-slate-700 hover:bg-slate-800" id="send">send</span>
                     </div>
                 </div>
             </div>
@@ -147,7 +147,7 @@
     </main>
 </body>
 <script src="../js/AgoraRTC_N-4.16.0.js"></script>
-<script src="../js/script.js"></script>
-<script src="../js/main_rtc.js"></script>
+<script src="../js/views.js" type="module"></script>
+<script src="../js/main_rtc.js" type="module"></script>
 </html>
 
