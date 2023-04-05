@@ -5,6 +5,7 @@
     height: 20vh;
     max-height: auto; 
     background: red;
+    margin: 10px;
 }
 
 /* [data-player="stream-player" ] > video {
