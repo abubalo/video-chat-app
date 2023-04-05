@@ -10,6 +10,7 @@ This is a web-based video chat application built using HTML, CSS, JavaScript, We
 - Timer to keep track of the call duration
 - Responsive design for use on desktop and mobile devices
 
+
 ## Installation
 
 To run the app locally, follow these steps:
