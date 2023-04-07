@@ -51,7 +51,7 @@ async function handleUserPublish(user, mediaType) {
   let streamPlayer = document.getElementById(`user-${user.uid}`);
   if (streamPlayer === null) {
     streamPlayer = `
-              <div data-player="stream-player" class="overflow-hidden" id="user-${user.uid}"  ></div>
+              <div data-player="stream-player" class="stream-players overflow-hidden" id="user-${user.uid}"  ></div>
           `;
     document
       .getElementById(`participants`)
