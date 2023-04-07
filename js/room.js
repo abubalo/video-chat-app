@@ -65,3 +65,9 @@ function formatTime(time) {
 setInterval(() => {
   updateTimer();
 }, 1000);
+
+
+
+
+const mainframe = document.querySelector("#main-screen");
+const participant = document.querySelector("#stream-container")
