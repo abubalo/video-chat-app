@@ -53,7 +53,7 @@ setInterval(() => {
 }, 1000);
 
 const mainframe = document.querySelector("#main--screen");
-const participants = document.querySelector(".stream-players");
+const participants = document.querySelectorAll(".stream-players");
 
 function expandVideoFrame() {
   for (let i = 0; i < participants.length; i++) {
