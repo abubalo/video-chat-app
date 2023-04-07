@@ -53,13 +53,14 @@ setInterval(() => {
 }, 1000);
 
 const mainframe = document.querySelector("#main--screen");
-const participants = document.querySelector(".users");
+const participants = document.querySelector(".stream-player");
 
 function expandVideoFrame() {
   for (let i = 0; i < participants.length; i++) {
     const participant = participants[i];
     participant.addEventListener("click", () => {
-      mainframe.textContent = "Video active";
+      alert("Video selected")
+      console.log(participant);
     });
   }
 }
