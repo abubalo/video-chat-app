@@ -2,7 +2,6 @@
   "devDependencies": {
     "tailwindcss": "^3.2.7"
   },
-  
   "name": "vidify",
   "version": "1.0.0",
   "main": "tailwind.config.js",
@@ -12,7 +11,7 @@
   "scripts": {
     "build": "tailwindcss -i ./style/input.css -o ./public/main.css",
     "watch": "tailwindcss -i ./style/input.css -o ./public/main.css --watch",
-    "vercel-build": "ignored"
+    "vercel-build": "echo 'Ignoring vercel-build'"
   },
   "keywords": [],
   "author": "",
