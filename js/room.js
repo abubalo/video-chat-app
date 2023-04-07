@@ -69,5 +69,6 @@ setInterval(() => {
 
 
 
-const mainframe = document.querySelector("#main-screen");
-const participant = document.querySelector("#stream-container")
+const mainframe = document.querySelector("#main--screen");
+const participant = document.querySelector("#participants");
+
